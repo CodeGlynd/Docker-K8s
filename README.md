@@ -38,4 +38,28 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
  docker exec -it nginx bash
 ```
 ---
- 
+ To stop container
+```bash
+ docker container stop <container id> or <container name>
+```
+
+ To exit container without stopping
+```bash
+ Ctrl+p then ctrl+q  
+```
+---
+
+Listing commands
+```bash
+ docker image ls 
+ docker container ls       #list running containers
+ docker container ls --all #list all containers
+```
+---
+## Remove & Delete
+```bash
+ docker container rm <container id>
+ docker image rm <image name>
+ docker container rm $(docker container ls -aq) -f    #remove all containers
+ docker image rm $(docker image ls -q) -f             #remove all images
+```
