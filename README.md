@@ -10,4 +10,11 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
  - [AraBigData-Github](https://github.com/ahmedsami76/AraBigData)
 
 
+## Getting Started
+
+```bash
+  docker image pull <image name>:<version>
+```
+by default if version not specified it would pull the latest version
+
 
