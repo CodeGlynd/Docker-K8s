@@ -17,6 +17,8 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
 ```
  by default if version not specified it would pull the latest version.
 
+---
+
 ```bash
  docker container create <argument> <image name> <command>
  docker container start <argument> <container id or name>
@@ -27,3 +29,5 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
 ```
  'run' command can make up for three commands (image pull , create and start)
  as it pulls image(if not found locally) , create a new container and start container.
+
+---
