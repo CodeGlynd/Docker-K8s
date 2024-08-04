@@ -40,7 +40,7 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
 ---
  To stop container
 ```bash
- docker container stop <container id> or <container name>
+ docker container stop <container id or container name>
 ```
 
  To exit container without stopping
@@ -63,3 +63,36 @@ Listing commands
  docker container rm $(docker container ls -aq) -f    #remove all containers
  docker image rm $(docker image ls -q) -f             #remove all images
 ```
+---
+## Images-Deep dive
+
+ To pull unofficial image
+```bash
+  docker image pull <publisher>/<unofficial image name>:<version>
+```
+
+ To rename container and container hostname 
+```bash
+  docker container run <argument> --name <new container name> -h <new container hostname> <image:version>
+  docker container run -it --name alpine -h alp alpine 
+```
+So alpine linux container shell for example would look like [root@alp] on running instead of [root@2325f9e04787] and container name would be alpine instead of bla-bla names those made up by default.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
