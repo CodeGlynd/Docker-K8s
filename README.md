@@ -79,10 +79,10 @@ Listing commands
 So alpine linux container shell for example would look like [root@alp] on running instead of [root@2325f9e04787] and container name would be alpine instead of bla-bla names those made up by default.
 
 ---
-### Images and Container metadata
+## Images and Container metadata
 ```bash
-docker image inspect <image name or id>
-docker container inspect <container name or id>
+ docker image inspect <image name or id>
+ docker container inspect <container name or id>
 ```
 ---
 
