@@ -31,3 +31,11 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
  as it pulls image(if not found locally) , create a new container and start container.
 
 ---
+
+ To run executable(command) inside a running container 
+```bash
+ docker exec -it <container> <command>
+ docker exec -it nginx bash
+```
+---
+ 
