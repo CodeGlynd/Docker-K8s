@@ -92,7 +92,7 @@ So alpine linux container shell for example would look like [root@alp] on runnin
  docker container run<argument> -p <host port>:<container port>
  docker container run -d --name webserver -p 80:80 nginx 
 ```
- This would create a new container named webserver from nginx image with port mapping that container port 80 would re direct to port 80 on host.
+ This would create a new container named webserver from nginx image with port mapping that container port 80 would redirect to port 80 on host.
 
 ---
 #### Copy files to containers
@@ -101,7 +101,7 @@ So alpine linux container shell for example would look like [root@alp] on runnin
  docker container cp <file path> <container id or name>:<target path>
  docker container cp ./files/file.txt 87e:/tmp/file.txt
 ```
- This would copy file.txt from host to /tmp/file.txt path on container.
+ This would copy file.txt from host to /tmp/file.txt path on container with id 87e.
 
 ---
 #### Identifying other containers
@@ -154,7 +154,13 @@ So alpine linux container shell for example would look like [root@alp] on runnin
  docker network connect <network> <container>
  docker network disconnect <network> <container>
 ```
-
+#### Additional helpful commands
+```bash
+ip link show
+ip addr show
+ifconfig
+curl
+```
 
 
 
