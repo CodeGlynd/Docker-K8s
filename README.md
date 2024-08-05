@@ -184,7 +184,26 @@ curl
 ```
 ----
 
+## Build image
 
+```bash
+ docker commit <container name or id> <new image name>
+```
+ Then you can build a new container with created image 
+
+> New image name better be conventional to be able to push it docker hub or any cloud storage
+  Like username/image name : version
+
+#### Demo
+```bash
+ docker container run -it --name pyflask python bash
+ docker commit pyflask DockerUser/pyflask:v1.0
+ docker container run -d -p 5000:5000 --name pyf DockerUser/pyflask:v1.0 python /app/hello.py
+```
+ Now a new container is built with name pyf you can find result from web browser on localhost:5000
+
+> create changes in file /app/hello.py after the first command in Demo to track changes and inheritance of layers  for new layers from old created container 
+----
 
 
 
