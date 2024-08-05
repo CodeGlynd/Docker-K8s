@@ -161,6 +161,30 @@ ip addr show
 ifconfig
 curl
 ```
+----
+
+## Docker drivers
+
+> docker volumes info can be found on /var/lib/docker/overlay2
+
+#### Bind mount volume
+
+```bash
+ docker container run -it -v <path on host>:<path on container> <image>
+ docker container run -it -v /files/pythonfiles:/app/code python
+```
+#### Create docker volume
+```bash
+ docker volume create <volume name>
+ docker container run -it -v <volume name>:<path on container> <image>
+```
+```bash
+ docker volume create myvol
+ docker container run -it -v myvol:/app/code python 
+```
+----
+
+
 
 
 
