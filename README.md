@@ -1,7 +1,7 @@
 
 # Docker & Kubernetes
 
-A walkthrough Docker&Kubernetes crash course with a summary of basic commands 
+#### A walkthrough Docker&Kubernetes crash course with a summary of basic commands 
 
 
 ## Resources
@@ -28,28 +28,28 @@ A walkthrough Docker&Kubernetes crash course with a summary of basic commands
  docker container run <argument> <image>
 ```
  'run' command can make up for three commands (image pull , create and start)
- as it pulls image(if not found locally) , create a new container and start container.
+  as it pulls image(if not found locally) , create a new container and start container.
 
 ---
 
- To run executable(command) inside a running container 
+ #### To run executable(command) inside a running container 
 ```bash
  docker exec -it <container> <command>
  docker exec -it nginx bash
 ```
 ---
- To stop container
+ #### To stop container
 ```bash
  docker container stop <container id or container name>
 ```
 
- To exit container without stopping
+ #### To exit container without stopping
 ```bash
  Ctrl+p then ctrl+q  
 ```
 ---
 
-Listing commands
+#### Listing commands
 ```bash
  docker image ls 
  docker container ls       #list running containers
@@ -66,12 +66,12 @@ Listing commands
 ---
 ## Images-Deep dive
 
- To pull unofficial image
+ #### To pull unofficial image
 ```bash
   docker image pull <publisher>/<unofficial image name>:<version>
 ```
 ---
- To rename container and container hostname 
+ #### To rename container and container hostname 
 ```bash
   docker container run <argument> --name <new container name> -h <new container hostname> <image:version>
   docker container run -it --name alpine -h alp alpine 
@@ -85,14 +85,75 @@ So alpine linux container shell for example would look like [root@alp] on runnin
  docker container inspect <container name or id>
 ```
 ---
+## Docker Networking
 
+#### Containers port mapping
+```bash
+ docker container run<argument> -p <host port>:<container port>
+ docker container run -d --name webserver -p 80:80 nginx 
+```
+ This would create a new container named webserver from nginx image with port mapping that container port 80 would re direct to port 80 on host.
 
+---
+#### Copy files to containers
 
+```bash
+ docker container cp <file path> <container id or name>:<target path>
+ docker container cp ./files/file.txt 87e:/tmp/file.txt
+```
+ This would copy file.txt from host to /tmp/file.txt path on container.
 
+---
+#### Identifying other containers
+```bash
+ docker container run --add-host <container name or id>:<container ip> <image>
+ docker container run --add-host web:172.17.0.2 ubuntu
+```
+ -This would give container ubuntu ability to communicate another container named web which has ip 172.17.0.2
+ OR
+ -from container ubuntu itself you can add web container to known hosts from /etc/hosts
 
+---
+ #### List docker networks
+ ```bash
+  docker network ls
+ ```
+---
+#### Network Types
+ 
+- Bridge:  creates a new adapter to bridge-connect created container
+- Host: exposes the whole container to inherit container's host (simulates the host)
+- None: creates an isolated container
 
+---
+#### create container on network
+```bash
+ docker container run <argument> --network <network> image
+ docker container run -it --network bridge alpine
+```
+ by default network type is of type bridge in not given.
 
+---
+#### Create new network
+```bash
+ docker network create <network name> -d <network type>
+ docker network create mynet -d host
+```
+#### Create new network with specified subnet mask
+```bash
+ docker network create --subnet <netmask> <network name>
+ docker network create --subnet 10.0.0.0/16 newnet
+```
 
+#### To create a new internal network (isolated)
+```bash
+ docker network create --internal  <network name>
+```
+####  To connect&disconnect container on specified network 
+```bash
+ docker network connect <network> <container>
+ docker network disconnect <network> <container>
+```
 
 
 
