@@ -165,7 +165,7 @@ curl
 
 ## Docker drivers
 
-> docker volumes info can be found on /var/lib/docker/overlay2
+> docker volumes info can be found on /var/lib/docker/overlay2 and volumes data in /var/lib/docker/volumes
 
 #### Bind mount volume
 
@@ -202,10 +202,19 @@ curl
 ```
  Now a new container is built with name pyf you can find result from web browser on localhost:5000
 
-> create changes in file /app/hello.py after the first command in Demo to track changes and inheritance of layers  for new layers from old created container 
+> create changes in file /app/hello.py after the first command in Demo to track changes and inheritance of layers  for new image from old created container 
 ----
 
+## Dockerfile
 
+[Dockerfile cheat sheet](https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index)
+
+After Dockerfile creation build new image based on Dockerfile instructions
+
+```bash
+docker build -t <new image tag> <Dockerfile path>
+```
+Then you can casually create a container with newly made image.
 
 
 
