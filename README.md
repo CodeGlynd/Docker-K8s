@@ -217,7 +217,7 @@ docker build -t <new image tag> <Dockerfile path>
 Then you can casually create a container with newly made image.
 
 ----
-Image Registries
+## Image Registries
 #### Login to [dockerhub](https://hub.docker.com)
 
 ```bash
@@ -235,6 +235,7 @@ Like username/image name : version
 ```bash
 docker image push <image>
 ```
+---- 
 
 
 
