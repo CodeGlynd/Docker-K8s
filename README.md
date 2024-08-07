@@ -218,15 +218,13 @@ Then you can casually create a container with newly made image.
 
 ----
 Image Registries
-<<<<<<< HEAD
-#### Login to [dockerhub](https://hub.docker.com/)
-=======
-#### Login to dockerhub
->>>>>>> 79753a89ff10080f9368e6f08e2d8dd1cd3d61aa
+#### Login to [dockerhub](https://hub.docker.com)
+
 ```bash
 docker login
 ```
 #### rename (tag) image 
+
 ```bash
 docker tag <image> <new image tag>
 ```
