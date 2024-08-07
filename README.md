@@ -216,6 +216,35 @@ docker build -t <new image tag> <Dockerfile path>
 ```
 Then you can casually create a container with newly made image.
 
+----
+Image Registries
+#### Login to [dockerhub](https://hub.docker.com/)
+```bash
+docker login
+```
+#### rename (tag) image 
+```bash
+docker tag <image> <new image tag>
+```
+> New image tag better be conventional to be able to push it docker hub or any cloud storage
+Like username/image name : version
+
+#### upload image to cloud storage
+```bash
+docker image push <image>
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
