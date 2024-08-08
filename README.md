@@ -2,7 +2,7 @@
 <h1 align="center"> Docker & Kubernetes<h1>
 
 
-#### A walkthrough Docker&Kubernetes crash course with a summary of basic commands 
+<h4 align="center">A walkthrough Docker&Kubernetes crash course with a summary of basic commands <h4>
 
 
 ## Resources
