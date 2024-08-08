@@ -3,7 +3,8 @@
 
 
 <h4 align="center">A walkthrough Docker&Kubernetes crash course with a summary of basic commands <h4>
-----
+
+---
 
 ## Resources
 
@@ -12,6 +13,8 @@
 
 ----
 ## [Demo Project](https://github.com/LEGO221/Vue-Docker-App)
+#### A simple demo project to containerize a front-end application using dockerfile   
+
 ----
 
 ## Getting Started
