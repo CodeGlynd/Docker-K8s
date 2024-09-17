@@ -244,12 +244,42 @@ docker image push <image>
 ```
 ---- 
 
+## Docker-compose
+
+after [Docker-compose installation](https://docs.docker.com/compose/install/)
+```bash
+chmod +x /usr/local/bin/docker-compose
+```
+
+#### Build with docker-compose yaml file (docker-compose.yml)
+
+- within context directory of docker-compose.yml file 
+ ```bash
+ docker-compose up &    #to run in background
+ #or in detatched mode
+ docker-compose up -d   #to run in detatched mode
+ ```
+ > it's better to run in background or with detatched mode to avoid that much of logs in your terminal
+
+- if not in context directory of docker-compose yaml file
+ ```bash
+ docker-compose -f <file_path>
+ ```
+
+List containers for a Compose project
+```bash
+docker-compose ps
+docker-compose ps --all #list all containers, running and stopped
+```
+
+remove a compose project 
+```bash
+docker-compose down
+```
+> this would remove containers and networks of compose project but won't delete images and volumes
 
 
-
-
-
-
+---
 
 
 
