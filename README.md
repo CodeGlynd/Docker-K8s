@@ -280,7 +280,62 @@ docker-compose down
 
 
 ---
+## Docker Swarm
 
+#### initalize swarm
+`get your host ip address with "ifconfig" or whatever based on your os`
+```bash
+docker swarm init --advertise-addr 'host ip address':2377 --listen-addr 'host ip address':2377
+```
+#### Show join token
+```bash
+docker swarm join-token worker   # worker node token
+docker swarm join-token manager  # manager node token
+```
+#### Add nodes to swarm
+`on any other machine add a worker or a manager node based on the token`
+```bash
+docker swarm join --token <token>
+```
+#### List swarm nodes
+```bash
+docker node ls
+```
+#### Create services on swarm
+```bash
+docker service create <options> <image>
+docker service create --name web -p 80:80 --replicas 5 nginx:1.21
+```
+#### List swarm services
+```bash
+docker service ls
+```
+#### List service distribution on nodes
+```bash
+docker service ps <service>
+docker service ps web
+```
+
+#### scaling service 
+
+```
+docker service scale <service>=<number_of_replicas>
+docker service scale  web=3
+```
+> this would scale service up or down based on its origin set of replicas
+
+#### Update service
+
+```bash
+docker service update --image <new_image> <options> <service>
+docker service update --image nginx:latest --update-parallelism 2 --update-delay 5s web 
+```
+
+#### Delete service
+```bash
+docker service rm <service>
+docker service rm web
+```
 
 
 
